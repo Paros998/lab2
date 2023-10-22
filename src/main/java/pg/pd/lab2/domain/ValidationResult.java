@@ -1,24 +1,26 @@
 package pg.pd.lab2.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import pg.pd.lab2.domain.exception.BaseMathException;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+@ToString
 public class ValidationResult implements Serializable {
     private boolean isValid;
-    private List<RuntimeException> errors;
+    private List<? extends BaseMathException> errors;
 
-    @Override
-    public String toString() {
-        return "ValidationResult{" +
-                "isValid=" + isValid +
-                ", errors=" + errors +
-                '}';
+    private ValidationResult(final boolean isValid, final List<? extends BaseMathException> errors) {
+        this.isValid = isValid;
+        this.errors = errors;
+    }
+
+    public static ValidationResult of(final List<? extends BaseMathException> errors) {
+        return new ValidationResult(errors.isEmpty(), errors);
     }
 }

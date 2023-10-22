@@ -11,14 +11,14 @@ import pg.pd.lab2.domain.CalculationResult;
 import pg.pd.lab2.infrastructure.service.CalculusService;
 
 @RestController
-@RequestMapping("api/v1/calculator")
+@RequestMapping("/api/v1/calculator")
 @RequiredArgsConstructor
 public class CalculatorHttpEndpoint {
     private final CalculusService calculusService;
 
     @PostMapping
     public CalculationResult tryToCalculate(final @RequestBody CalculationRequest request) {
-        return calculusService.calculate(Pair.of(request.getSecondaryNumber(), request.getMainNumber()),
+        return calculusService.calculate(Pair.of(request.getMainNumber(), request.getSecondaryNumber()),
                 request.getMethod());
     }
 }

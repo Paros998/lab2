@@ -8,11 +8,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode
+@Builder
 @ToString
 public final class CalculationResult implements Serializable {
     private Double mainNumber;
     private Double secondaryNumber;
     private CalculationMethod method;
     private Double result;
-    private ValidationResult invalidRequestResult;
+    private ValidationResult validationResult;
+
+    public boolean failedValidation() {
+        return !validationResult.isValid();
+    }
 }

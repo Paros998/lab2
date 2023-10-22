@@ -1,30 +1,33 @@
 package pg.pd.lab2.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.apache.commons.lang3.tuple.Pair;
-import pg.pd.lab2.domain.exception.DivideByZero;
+import pg.pd.lab2.domain.exception.BaseMathException;
+import pg.pd.lab2.domain.exception.DivideByZeroException;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
-@Getter
 @AllArgsConstructor
 public enum CalculationMethod {
     ADDITION(Collections.emptyMap()),
     SUBTRACTION(Collections.emptyMap()),
     MULTIPLICATION(Collections.emptyMap()),
-    DIVISION(Map.of((numbers -> !numbers.getRight().equals(0d)), DivideByZero.class));
+    DIVISION(Map.of((numbers -> numbers.getRight().equals(0d)), new DivideByZeroException()));
 
-    private final Map<Predicate<Pair<Double, Double>>, Class<? extends RuntimeException>> requiredValidations;
+    private final Map<Predicate<Pair<Double, Double>>, ? extends BaseMathException> requiredValidations;
 
-//    public boolean areNumbersValid(final Pair<Double, Double> calculationNumbers) {
-//        return requiredValidations.entrySet()
-//                .stream().map()
-//                .map(validation -> validation.test(calculationNumbers))
-//                .reduce(Boolean::logicalAnd)
-//                .orElse(false);
-//    }
+    public List<BaseMathException> validateNumbers(final Pair<Double, Double> calculationNumbers) {
+        List<BaseMathException> caughtErrors = new ArrayList<>();
+
+        requiredValidations.forEach((predicate, error) -> {
+            if (predicate.test(calculationNumbers)) caughtErrors.add(error);
+        });
+
+        return caughtErrors;
+    }
 
 }
