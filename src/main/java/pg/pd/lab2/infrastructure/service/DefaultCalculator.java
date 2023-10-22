@@ -1,6 +1,7 @@
 package pg.pd.lab2.infrastructure.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import pg.pd.lab2.domain.exception.BaseMathException;
 
 import java.util.List;
 
+@Log4j2
 @Service
 @RequiredArgsConstructor
 public class DefaultCalculator implements CalculusService {
@@ -40,6 +42,9 @@ public class DefaultCalculator implements CalculusService {
             case DIVISION -> numbers.getLeft() / numbers.getRight();
             case MULTIPLICATION -> numbers.getLeft() * numbers.getRight();
         });
+
+        log.info("Numbers {} for calculation method {} were calculated, result: {}", numbers, method,
+                result.getResult());
 
         return result;
     }
