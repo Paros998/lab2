@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pg.pd.lab2.api.CalculationRequest;
-import pg.pd.lab2.domain.CalculationResult;
-import pg.pd.lab2.infrastructure.service.CalculusService;
+import pg.pd.lab2.api.CalculationResult;
+import pg.pd.lab2.infrastructure.service.Calculator;
 
 @Log4j2
 @RestController
 @RequestMapping("/api/v1/calculator")
 @RequiredArgsConstructor
 public class CalculatorHttpEndpoint {
-    private final CalculusService calculusService;
+    private final Calculator calculator;
 
     @PostMapping
     public CalculationResult tryToCalculate(final @Valid @RequestBody CalculationRequest request) {
         log.info("Started processing calculation request {}", request);
 
-        return calculusService.calculate(Pair.of(request.getMainNumber(), request.getSecondaryNumber()),
+        return calculator.calculate(Pair.of(request.getMainNumber(), request.getSecondaryNumber()),
                 request.getMethod());
     }
 }

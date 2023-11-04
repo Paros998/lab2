@@ -1,6 +1,8 @@
-package pg.pd.lab2.domain;
+package pg.pd.lab2.api;
 
 import lombok.*;
+import pg.pd.lab2.domain.CalculationMethod;
+import pg.pd.lab2.domain.ValidationResult;
 
 import java.io.Serializable;
 
