@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pg.pd.lab2.api.CalculationRequest;
-import pg.pd.lab2.api.CalculationResult;
+import pg.pd.lab2.api.calculator.CalculationRequest;
+import pg.pd.lab2.api.calculator.CalculationResult;
 import pg.pd.lab2.infrastructure.service.Calculator;
 
 @Log4j2

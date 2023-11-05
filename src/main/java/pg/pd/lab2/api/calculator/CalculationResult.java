@@ -1,4 +1,4 @@
-package pg.pd.lab2.api;
+package pg.pd.lab2.api.calculator;
 
 import lombok.*;
 import pg.pd.lab2.domain.CalculationMethod;
@@ -6,12 +6,12 @@ import pg.pd.lab2.domain.ValidationResult;
 
 import java.io.Serializable;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-@EqualsAndHashCode
 @Builder
 @ToString
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
 public final class CalculationResult implements Serializable {
     private Double mainNumber;
     private Double secondaryNumber;

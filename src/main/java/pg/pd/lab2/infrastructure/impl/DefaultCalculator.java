@@ -1,4 +1,4 @@
-package pg.pd.lab2.infrastructure.service;
+package pg.pd.lab2.infrastructure.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -6,9 +6,10 @@ import lombok.val;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Service;
 import pg.pd.lab2.domain.CalculationMethod;
-import pg.pd.lab2.api.CalculationResult;
+import pg.pd.lab2.api.calculator.CalculationResult;
 import pg.pd.lab2.domain.ValidationResult;
 import pg.pd.lab2.domain.exception.BaseMathException;
+import pg.pd.lab2.infrastructure.service.Calculator;
 
 import java.util.List;
 

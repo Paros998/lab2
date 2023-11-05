@@ -1,4 +1,4 @@
-package pg.pd.lab2.api;
+package pg.pd.lab2.api.calculator;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
