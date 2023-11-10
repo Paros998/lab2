@@ -9,3 +9,5 @@ springdoc:
 logging:
   level:
     root: info
+  file:
+    name: lab2-app.log
