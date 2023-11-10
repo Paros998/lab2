@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pg.pd.lab2.api.calculator.CalculationRequest;
 import pg.pd.lab2.api.calculator.CalculationResult;
-import pg.pd.lab2.infrastructure.service.Calculator;
+import pg.pd.lab2.service.Calculator;
 
 @Log4j2
 @RestController

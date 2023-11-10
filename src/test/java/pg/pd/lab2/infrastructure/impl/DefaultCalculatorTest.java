@@ -11,7 +11,7 @@ import pg.pd.lab2.api.calculator.CalculationResult;
 import pg.pd.lab2.domain.CalculationMethod;
 import pg.pd.lab2.domain.ValidationResult;
 import pg.pd.lab2.domain.exception.DivideByZeroException;
-import pg.pd.lab2.infrastructure.service.Calculator;
+import pg.pd.lab2.service.Calculator;
 
 import java.util.Collections;
 import java.util.List;

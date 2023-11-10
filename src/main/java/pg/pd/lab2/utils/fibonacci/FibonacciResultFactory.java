@@ -1,4 +1,4 @@
-package pg.pd.lab2.infrastructure.factory;
+package pg.pd.lab2.utils.fibonacci;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

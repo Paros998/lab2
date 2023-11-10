@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pg.pd.lab2.api.fibonacci.FibonacciResult;
-import pg.pd.lab2.infrastructure.service.Fibonacci;
+import pg.pd.lab2.service.Fibonacci;
 
 @Log4j2
 @RestController

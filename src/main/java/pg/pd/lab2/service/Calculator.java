@@ -1,4 +1,4 @@
-package pg.pd.lab2.infrastructure.service;
+package pg.pd.lab2.service;
 
 import org.apache.commons.lang3.tuple.Pair;
 import pg.pd.lab2.domain.CalculationMethod;
