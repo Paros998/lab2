@@ -20,7 +20,9 @@ public class DefaultFibonacci implements Fibonacci {
             return FibonacciResultFactory.instantiate(degree);
         }
 
-        BigInteger first = BigInteger.valueOf(1), second = BigInteger.valueOf(1), iterationResult;
+        BigInteger first = BigInteger.valueOf(1);
+        BigInteger second = BigInteger.valueOf(1);
+        BigInteger iterationResult;
         final List<BigInteger> fibonacciNumbers = new LinkedList<>(List.of(first, second));
 
         for (int i = 2; i < degree; i++) {
