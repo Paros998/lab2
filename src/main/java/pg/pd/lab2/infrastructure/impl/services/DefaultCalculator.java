@@ -1,14 +1,14 @@
-package pg.pd.lab2.infrastructure.impl;
+package pg.pd.lab2.infrastructure.impl.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Service;
-import pg.pd.lab2.domain.CalculationMethod;
 import pg.pd.lab2.api.calculator.CalculationResult;
+import pg.pd.lab2.domain.CalculationMethod;
 import pg.pd.lab2.domain.ValidationResult;
-import pg.pd.lab2.domain.exception.BaseMathException;
+import pg.pd.lab2.domain.exception.math.BaseMathException;
 import pg.pd.lab2.service.Calculator;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class DefaultCalculator implements Calculator {
 
     @Override
     public List<BaseMathException> validateDataForCalculation(final Pair<Double, Double> numbers,
-                                                                        final CalculationMethod method) {
+                                                              final CalculationMethod method) {
         return method.validateNumbers(numbers);
     }
 

@@ -2,9 +2,10 @@ package pg.pd.lab2.utils.mongo;
 
 import jakarta.annotation.Resource;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import pg.pd.lab2.model.mongo.connection.MongoDbConnection;
 import pg.pd.lab2.loader.MongoDbConfigLoader;
+import pg.pd.lab2.model.mongo.connection.MongoDbConnection;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,8 +17,9 @@ import java.util.Properties;
 /**
  * The type Properties based mongo db config loader.
  */
-@Service
 @Log4j2
+@Service
+@Profile({"!devlocal"})
 public class PropertiesBasedMongoDbConfigLoader implements MongoDbConfigLoader {
     @Resource
     private final Properties properties = new Properties();

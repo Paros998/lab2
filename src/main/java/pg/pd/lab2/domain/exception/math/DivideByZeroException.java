@@ -1,4 +1,4 @@
-package pg.pd.lab2.domain.exception;
+package pg.pd.lab2.domain.exception.math;
 
 /**
  * The type Divide by zero exception.

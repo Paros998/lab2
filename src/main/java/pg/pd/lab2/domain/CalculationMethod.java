@@ -3,8 +3,8 @@ package pg.pd.lab2.domain;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.tuple.Pair;
-import pg.pd.lab2.domain.exception.BaseMathException;
-import pg.pd.lab2.domain.exception.DivideByZeroException;
+import pg.pd.lab2.domain.exception.math.BaseMathException;
+import pg.pd.lab2.domain.exception.math.DivideByZeroException;
 
 import java.util.ArrayList;
 import java.util.Collections;

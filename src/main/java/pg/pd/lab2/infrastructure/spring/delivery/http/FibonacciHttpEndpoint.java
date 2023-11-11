@@ -1,4 +1,4 @@
-package pg.pd.lab2.infrastructure.spring.devliery.http;
+package pg.pd.lab2.infrastructure.spring.delivery.http;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

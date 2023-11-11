@@ -10,7 +10,8 @@ import pg.pd.lab2.api.calculator.CalculationRequest;
 import pg.pd.lab2.api.calculator.CalculationResult;
 import pg.pd.lab2.domain.CalculationMethod;
 import pg.pd.lab2.domain.ValidationResult;
-import pg.pd.lab2.domain.exception.DivideByZeroException;
+import pg.pd.lab2.domain.exception.math.DivideByZeroException;
+import pg.pd.lab2.infrastructure.impl.services.DefaultCalculator;
 import pg.pd.lab2.service.Calculator;
 
 import java.util.Collections;

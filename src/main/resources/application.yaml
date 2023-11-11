@@ -5,7 +5,8 @@ server:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-
+  show-login-endpoint: true
+  show-actuator: true
 logging:
   level:
     root: info

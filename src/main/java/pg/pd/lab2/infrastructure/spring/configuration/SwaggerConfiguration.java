@@ -19,6 +19,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 @RequestMapping(path = "/")
 public class SwaggerConfiguration {
+
     /**
      * Public api grouped open api.
      *
@@ -27,6 +28,20 @@ public class SwaggerConfiguration {
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
+                .group("all")
+                .pathsToMatch("/**")
+                .pathsToExclude("/")
+                .build();
+    }
+
+    /**
+     * Public api grouped open api.
+     *
+     * @return the grouped open api
+     */
+    @Bean
+    public GroupedOpenApi v1Api() {
+        return GroupedOpenApi.builder()
                 .group("v1")
                 .pathsToMatch("/api/v1/**")
                 .pathsToExclude("/")
@@ -34,7 +49,7 @@ public class SwaggerConfiguration {
     }
 
     /**
-     * Lab 2 open api open api.
+     * Lab 2 open api.
      *
      * @return the open api
      */
@@ -51,7 +66,7 @@ public class SwaggerConfiguration {
     }
 
     /**
-     * Redirect view redirect view.
+     * Redirect view.
      *
      * @return the redirect view
      */

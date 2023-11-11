@@ -1,4 +1,4 @@
-package pg.pd.lab2.domain.exception;
+package pg.pd.lab2.domain.exception.math;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;

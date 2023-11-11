@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import pg.pd.lab2.loader.MongoDbConfigLoader;
@@ -15,6 +16,7 @@ import pg.pd.lab2.model.mongo.connection.MongoDbConnection;
  * The type Mongo db config.
  */
 @Configuration
+@Profile({"!devlocal"})
 @Log4j2
 public class MongoDbConfig extends AbstractMongoClientConfiguration {
     private final MongoDbConnection connection;

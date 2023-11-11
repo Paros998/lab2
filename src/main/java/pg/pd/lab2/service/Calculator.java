@@ -1,9 +1,9 @@
 package pg.pd.lab2.service;
 
 import org.apache.commons.lang3.tuple.Pair;
-import pg.pd.lab2.domain.CalculationMethod;
 import pg.pd.lab2.api.calculator.CalculationResult;
-import pg.pd.lab2.domain.exception.BaseMathException;
+import pg.pd.lab2.domain.CalculationMethod;
+import pg.pd.lab2.domain.exception.math.BaseMathException;
 
 import java.util.List;
 

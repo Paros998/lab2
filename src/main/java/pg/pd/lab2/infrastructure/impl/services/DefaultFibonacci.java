@@ -1,10 +1,10 @@
-package pg.pd.lab2.infrastructure.impl;
+package pg.pd.lab2.infrastructure.impl.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pg.pd.lab2.api.fibonacci.FibonacciResult;
-import pg.pd.lab2.utils.fibonacci.FibonacciResultFactory;
 import pg.pd.lab2.service.Fibonacci;
+import pg.pd.lab2.utils.fibonacci.FibonacciResultFactory;
 
 import java.math.BigInteger;
 import java.util.LinkedList;

@@ -3,7 +3,7 @@ package pg.pd.lab2.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import pg.pd.lab2.domain.exception.BaseMathException;
+import pg.pd.lab2.domain.exception.math.BaseMathException;
 
 import java.io.Serializable;
 import java.util.List;

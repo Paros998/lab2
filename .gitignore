@@ -13,6 +13,7 @@ target/
 .springBeans
 .sts4-cache
 
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -34,3 +35,6 @@ build/
 
 ### Connection properties ###
 Mongo-DB-connection.properties
+
+### Log file ###
+lab2-app.log
