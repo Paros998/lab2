@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Connection properties ###
+Mongo-DB-connection.properties
