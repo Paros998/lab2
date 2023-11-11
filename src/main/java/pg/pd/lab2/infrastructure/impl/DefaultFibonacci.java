@@ -10,6 +10,9 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The type Default fibonacci.
+ */
 @Service
 @RequiredArgsConstructor
 public class DefaultFibonacci implements Fibonacci {

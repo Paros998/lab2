@@ -8,6 +8,9 @@ import pg.pd.lab2.domain.exception.BaseMathException;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * The type Validation result.
+ */
 @Data
 @NoArgsConstructor
 @ToString
@@ -20,6 +23,12 @@ public class ValidationResult implements Serializable {
         this.errors = errors;
     }
 
+    /**
+     * Of validation result.
+     *
+     * @param errors the errors
+     * @return the validation result
+     */
     public static ValidationResult of(final List<? extends BaseMathException> errors) {
         return new ValidationResult(errors.isEmpty(), errors);
     }

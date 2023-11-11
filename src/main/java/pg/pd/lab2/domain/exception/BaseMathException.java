@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.EqualsAndHashCode;
 
+/**
+ * The type Base math exception.
+ */
 @JsonSerialize(using = ToStringSerializer.class)
 @EqualsAndHashCode(callSuper = false)
 public class BaseMathException extends RuntimeException {

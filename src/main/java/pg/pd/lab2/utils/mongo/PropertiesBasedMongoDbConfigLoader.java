@@ -13,6 +13,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 
+/**
+ * The type Properties based mongo db config loader.
+ */
 @Service
 @Log4j2
 public class PropertiesBasedMongoDbConfigLoader implements MongoDbConfigLoader {

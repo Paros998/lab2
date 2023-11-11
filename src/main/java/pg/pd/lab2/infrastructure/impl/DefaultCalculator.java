@@ -13,6 +13,9 @@ import pg.pd.lab2.service.Calculator;
 
 import java.util.List;
 
+/**
+ * The type Default calculator.
+ */
 @Log4j2
 @Service
 @RequiredArgsConstructor

@@ -11,12 +11,20 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import pg.pd.lab2.loader.MongoDbConfigLoader;
 import pg.pd.lab2.model.mongo.connection.MongoDbConnection;
 
+/**
+ * The type Mongo db config.
+ */
 @Configuration
 @Log4j2
 public class MongoDbConfig extends AbstractMongoClientConfiguration {
     private final MongoDbConnection connection;
 
-    public MongoDbConfig(final MongoDbConfigLoader configLoader) {
+    /**
+     * Instantiates a new Mongo db config.
+     *
+     * @param configLoader the config loader
+     */
+    public MongoDbConfig(final @NonNull MongoDbConfigLoader configLoader) {
         this.connection = configLoader.getMongoDbConnectionModel();
     }
 
@@ -29,10 +37,15 @@ public class MongoDbConfig extends AbstractMongoClientConfiguration {
     @Override
     @NonNull
     public MongoClient mongoClient() {
-        log.info("Mongo DB connection: {}", connection.generateConnectionString());
-        return MongoClients.create(connection.generateConnectionString());
+        log.info("Mongo DB connection: {}", connection.generateConnection());
+        return MongoClients.create(connection.generateConnection());
     }
 
+    /**
+     * Mongo template mongo template.
+     *
+     * @return the mongo template
+     */
     @Bean
     public MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongoClient(), getDatabaseName());

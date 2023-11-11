@@ -7,8 +7,25 @@ import pg.pd.lab2.domain.exception.BaseMathException;
 
 import java.util.List;
 
+/**
+ * The interface Calculator.
+ */
 public interface Calculator {
+    /**
+     * Validate data for calculation list.
+     *
+     * @param numbers the numbers
+     * @param method  the method
+     * @return the list
+     */
     List<BaseMathException> validateDataForCalculation(Pair<Double, Double> numbers, CalculationMethod method);
 
+    /**
+     * Calculate calculation result.
+     *
+     * @param numbers the numbers
+     * @param method  the method
+     * @return the calculation result
+     */
     CalculationResult calculate(Pair<Double, Double> numbers, CalculationMethod method);
 }

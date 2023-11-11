@@ -12,10 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
+/**
+ * The type Swagger configuration.
+ */
 @Configuration
 @RestController
 @RequestMapping(path = "/")
 public class SwaggerConfiguration {
+    /**
+     * Public api grouped open api.
+     *
+     * @return the grouped open api
+     */
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
@@ -25,6 +33,11 @@ public class SwaggerConfiguration {
                 .build();
     }
 
+    /**
+     * Lab 2 open api open api.
+     *
+     * @return the open api
+     */
     @Bean
     public OpenAPI lab2OpenAPI() {
         return new OpenAPI()
@@ -37,6 +50,11 @@ public class SwaggerConfiguration {
                         .url("https://github.com/Paros998/lab2"));
     }
 
+    /**
+     * Redirect view redirect view.
+     *
+     * @return the redirect view
+     */
     @GetMapping
     public RedirectView redirectView() {
         return new RedirectView("/swagger-ui.html");

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import pg.pd.lab2.api.fibonacci.FibonacciResult;
 import pg.pd.lab2.service.Fibonacci;
 
+/**
+ * The type Fibonacci http endpoint.
+ */
 @Log4j2
 @RestController
 @RequestMapping("/api/v1/fibonacci")
@@ -17,6 +20,12 @@ import pg.pd.lab2.service.Fibonacci;
 public class FibonacciHttpEndpoint {
     private final Fibonacci fibonacciService;
 
+    /**
+     * Gets fibonacci.
+     *
+     * @param fibonacciDegree the fibonacci degree
+     * @return the fibonacci
+     */
     @GetMapping
     public FibonacciResult getFibonacci(final @RequestParam Integer fibonacciDegree) {
         log.info("Started processing fibonacci calculation request, Degree: {}", fibonacciDegree);

@@ -6,6 +6,9 @@ import pg.pd.lab2.domain.ValidationResult;
 
 import java.io.Serializable;
 
+/**
+ * The type Calculation result.
+ */
 @Data
 @Builder
 @ToString
@@ -19,6 +22,11 @@ public final class CalculationResult implements Serializable {
     private Double result;
     private ValidationResult validationResult;
 
+    /**
+     * Failed validation boolean.
+     *
+     * @return the boolean
+     */
     public boolean failedValidation() {
         return !validationResult.isValid();
     }

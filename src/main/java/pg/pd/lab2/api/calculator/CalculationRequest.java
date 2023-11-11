@@ -3,6 +3,9 @@ package pg.pd.lab2.api.calculator;
 import lombok.*;
 import pg.pd.lab2.domain.CalculationMethod;
 
+/**
+ * The type Calculation request.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

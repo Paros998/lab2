@@ -6,6 +6,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 
+/**
+ * The type Fibonacci result.
+ */
 @Data
 @Builder
 @ToString

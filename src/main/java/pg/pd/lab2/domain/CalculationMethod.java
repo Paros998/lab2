@@ -12,16 +12,37 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * The enum Calculation method.
+ */
 @AllArgsConstructor
 @Log4j2
 public enum CalculationMethod {
+    /**
+     * Addition calculation method.
+     */
     ADDITION(Collections.emptyMap()),
+    /**
+     * Subtraction calculation method.
+     */
     SUBTRACTION(Collections.emptyMap()),
+    /**
+     * Multiplication calculation method.
+     */
     MULTIPLICATION(Collections.emptyMap()),
+    /**
+     * The Division.
+     */
     DIVISION(Map.of((numbers -> numbers.getRight().equals(0d)), new DivideByZeroException()));
 
     private final Map<Predicate<Pair<Double, Double>>, ? extends BaseMathException> requiredValidations;
 
+    /**
+     * Validate numbers list.
+     *
+     * @param calculationNumbers the calculation numbers
+     * @return the list
+     */
     public List<BaseMathException> validateNumbers(final Pair<Double, Double> calculationNumbers) {
         List<BaseMathException> caughtErrors = new ArrayList<>();
 

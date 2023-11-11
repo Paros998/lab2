@@ -12,6 +12,9 @@ import pg.pd.lab2.api.calculator.CalculationRequest;
 import pg.pd.lab2.api.calculator.CalculationResult;
 import pg.pd.lab2.service.Calculator;
 
+/**
+ * The type Calculator http endpoint.
+ */
 @Log4j2
 @RestController
 @RequestMapping("/api/v1/calculator")
@@ -19,6 +22,12 @@ import pg.pd.lab2.service.Calculator;
 public class CalculatorHttpEndpoint {
     private final Calculator calculator;
 
+    /**
+     * Try to calculate calculation result.
+     *
+     * @param request the request
+     * @return the calculation result
+     */
     @PostMapping
     public CalculationResult tryToCalculate(final @Valid @RequestBody CalculationRequest request) {
         log.info("Started processing calculation request {}", request);

@@ -8,9 +8,18 @@ import pg.pd.lab2.api.fibonacci.FibonacciResult;
 import java.math.BigInteger;
 import java.util.List;
 
+/**
+ * The type Fibonacci result factory.
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FibonacciResultFactory {
 
+    /**
+     * Instantiate fibonacci result.
+     *
+     * @param degree the degree
+     * @return the fibonacci result
+     */
     public static FibonacciResult instantiate(final Integer degree) {
         return switch (degree) {
             case 0 -> none();
@@ -19,6 +28,13 @@ public class FibonacciResultFactory {
         };
     }
 
+    /**
+     * Instantiate fibonacci result.
+     *
+     * @param result  the result
+     * @param numbers the numbers
+     * @return the fibonacci result
+     */
     public static FibonacciResult instantiate(final @NonNull BigInteger result, final @NonNull List<BigInteger> numbers) {
         return FibonacciResult.builder()
                 .fibonacciNumbers(numbers)
