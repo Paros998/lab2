@@ -35,7 +35,7 @@ public class SwaggerConfiguration {
     }
 
     /**
-     * Public api grouped open api.
+     * V 1 api grouped open api.
      *
      * @return the grouped open api
      */
@@ -43,7 +43,7 @@ public class SwaggerConfiguration {
     public GroupedOpenApi v1Api() {
         return GroupedOpenApi.builder()
                 .group("v1")
-                .pathsToMatch("/api/v1/**")
+                .pathsToMatch("/login", "/logout", "/api/v1/**")
                 .pathsToExclude("/")
                 .build();
     }

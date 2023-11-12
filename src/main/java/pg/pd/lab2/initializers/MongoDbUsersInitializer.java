@@ -24,8 +24,14 @@ public class MongoDbUsersInitializer implements ApplicationRunner {
         val user = UserDto.builder()
                 .username("Test_1")
                 .password("Test_1")
-                .roles(Set.of("ADMIN", "USER"))
+                .roles(Set.of("USER"))
+                .build();
+        val admin = UserDto.builder()
+                .username("Test_2")
+                .password("Test_2")
+                .roles(Set.of("ADMIN"))
                 .build();
         userService.createUser(user);
+        userService.createUser(admin);
     }
 }
